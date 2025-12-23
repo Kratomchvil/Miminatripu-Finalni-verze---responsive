@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+body::before {
+        content: "";
+            position: fixed;
+                top: 0;
+                    left: 0;
+                        width: 100%;
+                            height: 100%;   
+                                background: rgba(0, 0, 0, 0.5); /* 🔳 Poloprůhledná černá vrstva */
+                                    z-index: -1;
+    }
+
+    body {  
+        background: linear-gradient(-45deg, #fdc608, #111111, #000000, #fdc608);
+            color: rgba(253,198,8,255);
+                font-family:Arial, Helvetica, sans-serif;
+                    text-align: center;
+                        margin: 0px;
+                            background-size: center;
+                                padding: 0;
+                                    overflow-x: hidden;
+                                        user-select: none;
+                                        
+    }
+    .title {
+    font-size: 11vw;
+        font-weight: bolder;
+            text-transform: uppercase;
+                white-space: nowrap;
+                    animation: glow 1.5s infinite alternate, glow-pulse 2s infinite alternate;
+                        text-align: center;
+                            position: relative;
+                           
+                                
+                           
+    }
+
+    @keyframes glow {
+        from { text-shadow: 0 0 20px rgb(255, 213, 0), 0 0 20px orange; }
+            to { text-shadow: 0 0 20px rgb(255, 208, 0), 0 0 40px red; }
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 1.2rem;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 12px 20px;
+        z-index: 10;
+        font-weight: bold;
+    }
+
+    /* Nav links (desktop) */
+    .nav-links {
+        display: flex;
+        gap: 40px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+    }
+    .nav-links li a {
+        color: rgba(253,198,8,255);
+        text-decoration: none;
+        padding: 6px 8px;
+    }
+
+    /* Toggle button hidden on desktop */
+    .nav-toggle { display: none; background: transparent; border: none; cursor: pointer; padding: 8px; }
+    .hamburger { display: inline-block; width: 22px; height: 2px; background: rgba(253,198,8,255); position: relative; transition: background 220ms ease, transform 220ms ease; }
+    .hamburger::before, .hamburger::after { content: ''; position: absolute; left: 0; width: 22px; height: 2px; background: rgba(253,198,8,255); transition: transform 220ms ease, top 220ms ease, opacity 220ms ease; }
+    .hamburger::before { top: -7px; }
+    .hamburger::after { top: 7px; }
+    /* Keep hamburger shape when expanded; only indicate active state subtly */
+    .nav-toggle[aria-expanded="true"] .hamburger { opacity: 0.95; }
+    .nav-toggle[aria-expanded="true"] .hamburger::before, .nav-toggle[aria-expanded="true"] .hamburger::after { top: unset; transform: none; }
+
+    .nav a {
+        color: rgba(253,198,8,255);
+            text-decoration: none;
+                transition: color 0.3s, transform 0.12s ease; 
+    }
+    /* Nav link hover: slight shrink */
+    .nav-links li a { display:inline-block; transition: transform 120ms ease, color 150ms ease; }
+    .nav-links li a:hover, .nav-links li a:focus {
+        transform: scale(0.96);
+        color: #fff;
+    }
+    /* Slight active press effect */
+    .nav-links li a:active { transform: scale(0.94); }
+    .nav a:hover {
+        color: rgba(253,198,8,255);
+            background: black;
+    }
+
+    .nav-right { margin-right: 0; }
+    .nav-logo {
+        display: inline-block;
+        margin-left: 0; /* Posunuto blíže na střed */
+    }
+    .nav-logo-img {
+        height: auto;
+        display: block;
+        border-radius: 50%;
+        max-height: 36px; /* lehce menší, aby se vešel na malé obrazovky */
+    }
+
+    /* Desktop tweak: lehké posunutí loga dovnitř obrazovky */
+    @media (min-width: 769px) {
+        .nav-right { transform: translateX(-40px); }
+    }
+
+    /* Social icons row */
+    .icons { display:flex; justify-content:center; gap:20px; align-items:center; margin-top: 20px; }
+    .logo-container {
+        text-align: center;
+            margin-top: 70px;
+                margin-bottom: 20px;
+
+    }
+
+    .logo {
+        width: 200px;
+        
+                border-radius: 50%;
+                    box-shadow: 0 0 20px rgba(253,198,8,255);
+                        transition: transform 0.3s ease;
+                            max-width: 200px;
+                               
+                            
+    }
+
+.icon {
+    transition: transform 0.5s ease, filter 0.5s ease;
+        background-color: rgba(253,198,8,255);
+            margin: 0 12px;
+                border-radius: 35px;
+                    gap: 20px;
+                        object-fit: contain;
+
+}
+
+
+.icon:hover {
+   transform: scale(1.2);
+        color: rgb(255, 255, 255);
+            transform: scale(1.1);
+                background-color: rgba(253,198,8,255);
+                    text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black;
+                        box-shadow: 0 0 20px orange, 0 0 30px rgb(205, 135, 5)
+                            
+}
+
+.icon {
+    width: 100px;
+        height: 100px;
+}
+
+.icons a {
+  text-decoration: none;
+    border: none;
+}
+
+.music-section {
+    text-align: center;
+        margin: 50px 0;
+            color: rgba(253,198,8,255);
+                
+}
+
+.music-section h2 {
+    font-size: 3rem;
+        margin-bottom: 30px;
+            text-shadow: 0 0 20px rgba(253,198,8,255);
+                text-shadow: orange;
+}
+
+.music-section h3 {
+    font-size: 1.3rem;
+        margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(253,198,8,255);
+                text-shadow: rgba(253,198,8,255);
+                    color: white;
+}
+.tracks {
+    display: flex;
+        justify-content: center;
+            gap: 50px;
+                flex-wrap: wrap;
+                
+}
+
+.track {
+    background-color: rgba(0, 0, 0, 0.7);
+        padding: 30px;
+            border: 2px solid rgba(253,198,8,255);
+                border-radius: 10px;
+                    width: 150px;
+                        text-align: center;
+                            box-shadow: 0 0 15px rgba(253,198,8,255);
+                                transition: transform 0.2s ease;
+                                    
+}
+
+.track:hover {
+    transform: scale(1.05);
+}
+
+.play-btn {
+    width: 100px;
+        height: 100px;
+            cursor: pointer;
+                margin-bottom: 10px;
+                    background-color: rgba(253,198,8,255);
+                        border-radius: 50%;
+                            box-shadow: 0 0 10px rgba(253,198,8,255), 0 0 20px orange;
+                                cursor: pointer;
+                                    transition: transform 0.2s ease;
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+}
+.track p {
+    margin: 10px;
+        font-size: 150%;
+            text-align: center;
+                color: white;
+                    font-weight: bold;
+                        text-shadow: 0 0 10px rgba(253,198,8,255);
+                            text-shadow: rgba(253,198,8,255);
+                                
+}
+
+.upcoming-concerts {
+    text-align: center;
+        margin: 20px 0;
+            color: rgba(253,198,8,255);
+                font-size: 1.5rem;
+                    text-shadow: 0 0 20px rgba(253,198,8,255);
+                        text-shadow: orange;
+}
+.footer {
+    background: rgba(0, 0, 0, 0.350);
+        color: rgba(253,198,8,255);
+            text-align: center;
+                padding: 6px 0; /* menší vertikální prostor */
+                    font-size: 0.95rem; /* o něco menší text */
+                        margin-top: 12px; /* zmenšeno, aby footer nebyl velký */
+                            text-decoration: none;
+                
+}
+.footer a {
+    color: rgba(253,198,8,255);
+        text-decoration: none;
+            margin: 0 5px;
+}
+
+.countdown-section {
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    border: 2px solid rgba(253,198,8,255);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.548);
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 4px 6px rgba(253,198,8,255);
+}
+
+.countdown-section p {
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.countdown-section img, .countdown-img {
+    max-width: 220px;
+    display: block;
+    margin: 0 auto 1rem;
+}
+
+.countdown-section p .vychodzapad {
+   color:rgba(253,198,8,255);
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 1rem;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.countdown-item span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgba(253,198,8,255);
+}
+
+.countdown-item .label {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: #ddd;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

@@ -1,0 +1,97 @@
+/* kontakt.css */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(-45deg, #fdc608, #111111, #000000, #fdc608);
+    background-size: center;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+.kontakt-content {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px 60px;
+    text-align: center;
+}
+
+.kontakt-content h1 {
+    font-size: 3rem;
+    color: rgba(253,198,8,255);
+    text-shadow: 0 0 15px rgba(253,198,8,255);;
+    margin-bottom: 30px;
+}
+
+.kontakt-box {
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border: 2px solid #ffcc00;
+    box-shadow: 0 0 25px #ffcc00;
+    border-radius: 20px;
+}
+
+.kontakt-box p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.kontakt-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.kontakt-box li {
+    margin: 15px 0;
+    font-size: 1.1rem;
+}
+
+.kontakt-box a {
+    color: rgba(253,198,8,255);
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.kontakt-box a:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px #ffcc00;
+}
+
+.section-title {
+    font-size: 48px;
+    color: rgba(253,198,8,255);
+    text-align: center;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 10px;
+    margin-top: 100px;
+}
+
+.footer {
+    background: rgba(0, 0, 0, 0.35);
+    color: rgba(253,198,8,255);
+    text-align: center;
+    padding: 16px 0 10px 0;
+    font-size: 1rem;
+    flex-shrink: 0;
+    width: 100%;
+    margin-top: 0;
+}
+
+.footer a {
+    color: rgba(253,198,8,255);
+    text-decoration: underline;
+    margin: 0 5px;
+}

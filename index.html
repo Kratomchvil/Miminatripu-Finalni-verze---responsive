@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIMINATRIPU official</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css"> <!-- Responsive overrides -->
+    <link rel="icon" type="image/png" href="/logos/favicon.png"> 
+    <link rel="stylesheet" href="preloader.css">
+</head>
+
+<body>
+   
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    
+    <nav class="nav">
+        <div class="nav-left">
+            <button class="nav-toggle" aria-label="Otevřít menu" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="onas.html">O nás</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a class="">Merch - již brzy!</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <a href="index.html" class="nav-logo" aria-label="Domů">
+                <img src="/logos/logo.png" alt="MIMINATRIPU" class="nav-logo-img" width="30" height="30">
+            </a>
+        </div>
+    </nav>
+
+    <div class="logo-container">
+        <img src="/logos/logo.png" alt="Logo MIMINATRIPU" class="logo">
+    </div>
+    <div class="title">MIMINATRIPU
+        
+    </div>
+
+    <div class="icons">
+        <a href="https://open.spotify.com/artist/7vwf6Dql8AkBdVXGLvPzgz" target="_blank">
+            <img src="button/spotify.png" alt="Spotify" class="icon">
+        </a>
+        <a href="https://www.instagram.com/miminatripu/" target="_blank">
+            <img src="button/instagram.png" alt="Instagram" class="icon">
+        </a>
+        <a href="https://youtube.com" target="_blank">
+            <img src="button/youtube.png" alt="Youtube" class="icon">
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61577759039465" target="_blank">
+            <img src="button/facebook.png" alt="Facebook" class="icon">
+        </a>
+    </div>
+
+    <section class="countdown-section">
+    <img src="/fotky/vychodzapad.png" alt="vychodzapad" class="countdown-img">
+        <p>Nový singl <span class="vychodzapad">VÝCHODZÁPAD</span> již brzy na vašich stramovacích platformách!</p>
+    <div id="countdown">
+        <div class="countdown-item">
+            <span id="days">00</span>
+            <span class="label">Dní</span>
+        </div>
+        <div class="countdown-item">
+            <span id="hours">00</span>
+            <span class="label">Hodin</span>
+        </div>
+        <div class="countdown-item">
+            <span id="minutes">00</span>
+            <span class="label">Minut</span>
+        </div>
+        <div class="countdown-item">
+            <span id="seconds">00</span>
+            <span class="label">Sekund</span>
+        </div>
+    </div>
+</section>
+
+ 
+
+<section class="music-section">
+    <h2>Naše <span class="hudba">Hudba</span></h2>
+      <h3>Zde si můžete poslechnout malé úryvky z naší hudby!</h3>
+
+    <div class="tracks">
+        <div class="track">
+            <img src="/button/play.png" class="play-btn" data-src="hudba/kdyby-ceny-byly-nižší.mp3" alt="Play"> 
+            <p>KDYBY CENY BYLY NIŽŠÍ</p>
+        </div>
+        <div class="track">
+            <img src="/button/play.png" class="play-btn" data-src="hudba/american-dream.mp3" alt="Play"> 
+            <p>VÝCHOD ZÁPAD</p>
+        </div>
+        <div class="track">
+            <img src="/button/play.png" class="play-btn" data-src="hudba/jsem-muž.mp3" alt="Play">
+            <p>JSEM MUŽ</p>
+        </div>
+    </div>
+    <audio id="player"></audio>
+</section>
+
+<section class="upcoming-concerts">
+    <h1><b>Nadcházející koncert</b></h1>
+    <p><u><b>20.12.2025</b> Trhy Valašské Meziříčí 18:00h.</p> 
+    
+</section>
+
+
+<footer class="footer">
+    <p>&copy; 2025 MIMINATRIPU | Všechna práva vyhrazena.</p>
+    <p>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="onas.html">O nás</a>
+        </p>
+</footer>
+
+
+
+
+    <script>
+window.addEventListener("load", function() {
+    setTimeout(function() {
+        let preloader = document.getElementById("preloader");
+        preloader.classList.add("preloader-hidden");
+
+        // Po 0,5s (doba přechodu) úplně odstraníme preloader
+        setTimeout(() => {
+            preloader.style.display = "none";
+        }, 500); // Stejný čas jako transition v CSS
+    }, 0); // Preloader bude viditelný jen 0,5s místo 1,1s
+});
+    </script>
+    
+
+<script>
+const player = document.getElementById('player');
+let currentBtn = null;
+
+document.querySelectorAll('.play-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const track = btn.dataset.src;
+
+        // Pokud už hraje tahle písnička
+        if (currentBtn === btn) {
+            if (!player.paused) {
+                player.pause();
+            } else {
+                player.play();
+            }
+            return;
+        }
+
+        // Jiná písnička → nastav src a spusť
+        player.src = track;
+        player.play();
+        currentBtn = btn;
+    });
+});
+</script>
+
+<script>
+// Nastavení cílového data (7.11.2025 23:59)
+const countDownDate = new Date(2025, 10, 7, 23, 59, 0).getTime();
+
+// Aktualizace každou sekundu
+const x = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+
+    // Výpočet dnů, hodin, minut a sekund
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Aktualizace elementů
+    document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+    document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+    document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+    document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+    // Když odpočet skončí
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "NOVÁ PÍSEŇ JE VENKU!";
+    }
+}, 1000);
+</script>
+
+<!-- Nav toggle script -->
+<script src="/js/nav.js"></script>
+</html>

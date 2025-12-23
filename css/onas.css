@@ -1,0 +1,195 @@
+body {
+    background-size: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(-45deg, #fdc608, #111111, #000000, #fdc608);
+    min-height: 100vh; /* Umožní posouvání stránky */
+    overflow-y: auto; /* Povolení scrollování */
+}
+
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+
+}
+
+.about-text {
+    max-width: 800px;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 100px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(253,198,8,255);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
+}
+
+.about-title {
+    text-align: center;
+    font-size: 3em;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 6px;
+    color: rgba(253,198,8,255);
+    text-shadow: 0 0 10px rgba(253,198,8,255);
+    padding: 20px;
+    border: 1px solid rgb(0, 0, 0); /* Žlutý rámeček */
+    border-radius: 10px; /* Zaoblené rohy */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Glow efekt */
+    width: 400px;
+    margin-top: 100px;
+    background-color: rgba(0, 0, 0, 0.7);
+    max-height: 30px;    
+}
+
+.section-title {
+    font-size: 65px;
+    color: rgba(253,198,8,255);
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 0 40px rgba(253,198,8,255);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 100px;
+    display: inline-block;
+    border-radius: 10px;
+    margin-top: 200px;
+}
+
+
+.member-photo {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(253,198,8,255);
+    box-shadow: 0 0 15px rgba(253,198,8,255);
+    margin-bottom: 20px;
+}
+
+
+
+.members-header {
+    font-size: 30px;
+    color: rgba(253,198,8,255); 
+    text-shadow: 0 0 20px rgba(253,198,8,255);
+    padding: 1px 15px;
+    margin-top: 40px;
+    border-radius: 10px; /* Zaoblené rohy */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Glow efekt */
+    background-color: rgba(0, 0, 0, 0.7);
+    display: inline-block;
+
+}
+
+.member-jony {
+    margin: 200px;
+    background-color: #080808b7;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(253,198,8,255);
+    font-size: 20px;
+    font-weight: 500;
+}
+.member-jony h2 {
+    color: rgba(253,198,8,255);
+    text-shadow: 0 0 10px rgba(253,198,8,255);
+    font-size: 50px;
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: rgba(255, 255, 255, 0.048);
+    padding: 10px;
+    border-radius: 40px;
+    margin: 20px; 
+}
+
+.member-adam {
+    margin: 200px;
+    background-color: #080808b7;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(253,198,8,255);
+    font-size: 20px;
+    font-weight: 500;
+}
+.member-adam h2 {
+    color: rgba(253,198,8,255);
+    text-shadow: 0 0 10px rgba(253,198,8,255);
+    font-size: 50px;
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: rgba(255, 255, 255, 0.048);
+    padding: 10px;
+    border-radius: 40px;
+    margin: 20px; 
+}
+
+.member-dan{
+    margin: 200px;
+    background-color: #080808b7;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(253,198,8,255);
+    font-size: 20px;
+    font-weight: 500;
+}
+.member-dan h2 {
+    color: rgba(253,198,8,255);
+    text-shadow: 0 0 10px rgba(253,198,8,255);
+    font-size: 50px;
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: rgba(255, 255, 255, 0.048);
+    padding: 10px;
+    border-radius: 40px;
+    margin: 20px; 
+}
+
+.member-dory {
+    margin: 200px;
+    background-color: #080808b7;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(253,198,8,255);
+    font-size: 20px;
+    font-weight: 500;
+}
+.member-dory h2 {
+    color: rgba(253,198,8,255);
+    text-shadow: 0 0 10px rgba(253,198,8,255);
+    font-size: 50px;
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: rgba(255, 255, 255, 0.048);
+    padding: 10px;
+    border-radius: 40px;
+    margin: 20px; 
+}
+
+/* Responsive adjustments for About page */
+@media (max-width: 768px) {
+    .about-text { padding: 20px; max-width: 95%; }
+    .about-title, .section-title { width: auto; font-size: 2rem; margin-top: 40px; padding: 10px 20px; }
+    img.logo2 { width: 80px; margin: 40px; }
+    .member-photo { width: 200px; height: 200px; margin: 20px; }
+    .member-jony, .member-adam, .member-dan, .member-dory { margin: 20px; padding: 20px; font-size: 1rem; }
+    .member-jony h2, .member-adam h2, .member-dan h2, .member-dory h2 { font-size: 2.6rem; margin: 10px; }
+}
+
+@media (max-width: 480px) {
+    .about-text { padding: 16px; font-size: 0.95rem; }
+    .section-title { font-size: 1.6rem; padding: 6px 12px; }
+    .member-photo { width: 140px; height: 140px; }
+    .member-jony, .member-adam, .member-dan, .member-dory { margin: 12px; padding: 12px; font-size: 0.95rem; }
+    .member-jony h2, .member-adam h2, .member-dan h2, .member-dory h2 { font-size: 1.8rem; }
+}
